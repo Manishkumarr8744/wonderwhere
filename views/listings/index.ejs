@@ -1,0 +1,29 @@
+
+
+<% layout("/layouts/boilerplate") %>
+
+
+<body>
+    <h1 style="display: flex; justify-content: center; align-items: center; font-weight: 100; margin: 15px;">Enjoy Your hoildays with our luxury</h1>
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+
+        <%  for (let listing of allListings){ %>
+            <a style="text-decoration: none;" href="/listings/<%= listing._id %>">
+
+            <div class="card listing-card" style="width: 20rem;">
+                <img src="<%= listing.image.url %>" style="width: 15rem; height: 20rem;" class="card-img-top" alt="listing_image">
+                <div class="card-img-overlay"></div>
+                <div class="card-body">
+                  <p class="card-text"><b><%= listing.title %></b> <br><br\>
+                    &#8377;<%= listing.price.toLocaleString("en-in") %>\Night 
+        
+                </p>
+                </div>
+              </div>
+            </a>
+              <% } %>
+    </div>
+
+    
+</body>

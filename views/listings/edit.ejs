@@ -1,0 +1,68 @@
+
+<% layout("/layouts/boilerplate") %>
+
+<body>
+    <h1>Edit Listing details</h1>
+
+    <form method="post" class="needs-validation" enctype="multipart/form-data" novalidate action="/listings/<%= editListing._id %>?_method=PUT">
+
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input required  class="form-control" type="text" name="listing[title]" placeholder="enter Title" value="<%= editListing.title%>">
+            <div class="invalid-feedback">
+                Title should be there
+              </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input required class="form-control" type="text" name="listing[description]" placeholder="enter description" value="<%= editListing.description%>">
+            <div class="invalid-feedback">
+                description should be there
+              </div>
+        </div>
+        <div class="mb-3">
+            <p>Original Image</p>
+            <img style="width: 20rem; height:15rem;" src="<%= editListing.image.url %>" alt="">
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input type="file"  class="form-control"  name="listing[image]" placeholder="enter image URL" >
+            <div class="invalid-feedback">
+               upload new  Image
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input required class="form-control" type="number" name="listing[price]" placeholder="enter price" value="<%= editListing.price%>">
+            <div class="invalid-feedback">
+                Price should be there
+              </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input required class="form-control" type="text" name="listing[location]" placeholder="enter location" value="<%= editListing.location%>"  >
+            <div class="invalid-feedback">
+                Location should be there
+              </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="country" class="form-label ">country</label>
+
+            <input required class="form-control" type="text" name="listing[country]" placeholder="enter country" value="<%= editListing.country%>">
+            <div class="invalid-feedback">
+                Country should be there
+              </div>
+        </div>
+        
+        <br>
+        <div  class="addbtn">
+        <button style="background-color: #fe434b; border: none;" class="btn btn-dark">update listing</button>
+        <br>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+<div class="row">
+    <div class="col-8 offset-2">
+    <h1>Create new Listing</h1>
+    <form method="post" novalidate class="needs-validation" enctype="multipart/form-data" action="/listings"> 
+        <!-- entype us used for send image file -->
+        <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input required type="text" name="listing[title]" class="form-control" placeholder="enter Title">
+        <div class="valid-feedback">
+            Looks good!
+          </div>
+    </div>
+        
+         <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+        <input required type="text" class="form-control" name="listing[description]" placeholder="enter description">
+        <div class="invalid-feedback">
+            add a attractive description!
+          </div>
+    </div>
+        
+    <!-- <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input  type="text" class="form-control" name="listing[image]" placeholder="enter image URL">
+    </div> -->
+    <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input required type="file" class="form-control" name="listing[image]" placeholder="enter image URL">
+    </div>
+
+    <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input  type="number" class="form-control" name="listing[price]" placeholder="enter price">
+        <div class="invalid-feedback">
+            mininum price should be greater than 0 %>
+          </div>
+    </div>
+    <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input required type="text" class="form-control" name="listing[location]" placeholder="enter location">
+        <div class="invalid-feedback">
+           location
+          </div>
+    </div>
+
+    <div class="mb-3">
+    <label for="country" class="form-label ">country</label>
+        <input required type="text" class="form-control" name="listing[country]" placeholder="enter country">
+        <div class="invalid-feedback">
+            country
+          </div>
+    </div >
+    <div class="addbtn">
+    <br>
+        <button  style="background-color: #fe434b; border: none;" class="btn btn-dark">Add new listing</button>
+        <br>
+    </div>
+    </form>
+    <br>
+</div>
+</div>
+    
+</body>
